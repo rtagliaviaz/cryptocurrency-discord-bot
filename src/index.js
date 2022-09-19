@@ -1,6 +1,11 @@
 const axios = require("axios");
 const Discord = require("discord.js");
+const express = require('express')
+const app = express()
+
 require("dotenv").config();
+
+const PORT = process.env.PORT || 4000;
 
 const client = new Discord.Client({
   intents: [
@@ -16,9 +21,7 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate",  (msg) => {
-  console.log(msg)
   if (msg.content.startsWith("!crypto_price")) {
-    console.log(msg)
     cryptoPrice(msg)
   } else {
     switch (msg.content) {
@@ -137,4 +140,6 @@ const getSupportedCurrencies = async (msg) => {
 
 client.login(process.env.BOT_TOKEN);
 
-
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});

@@ -1,6 +1,5 @@
 # cryptocurrency-discord-bot
 
-
 a cryptocurrency discord bot made with *Node*, *discord.js* and *coingecko api*
 in this post we will learn how to create a cryptocurrency Discord bot to obtain the values of the cryptocurrency we want to know using [Coingecko API](https://www.coingecko.com/en/api)
 
@@ -8,7 +7,7 @@ To make this post I used the same example from my other post [How to make a Cryp
 
 [You can contact me by telegram if you need to hire a Full Stack developer or if you need a discord bot for your server](https://t.me/rtagliajs)
 
-[You can also contact me by discord.](Appu#9136)
+You can also contact me by **discord Appu#9136**
 
 [You can clone the repo if you want.](https://github.com/rtagliaviaz/cryptocurrency-discord-bot)
 
@@ -21,8 +20,8 @@ To make this post I used the same example from my other post [How to make a Cryp
 ## Creating Our Project
 
 1. open your terminal and type the following
-2. mkdir node-telegram-tut
-3. cd node-telegram-tut
+2. mkdir discord-cryptocurrency-bot
+3. cd discord-cryptocurrency-bot
 4. npm init --y
 5. code .
 
@@ -36,7 +35,7 @@ To make this post I used the same example from my other post [How to make a Cryp
 To install dependencies go to your project folder open a terminal and type the following
 
 ```console
-npm i axios dotenv discord.js
+npm I axios dotenv discord.js
 ```
 
 Now go to your package.json and add this
@@ -49,7 +48,7 @@ Now go to your package.json and add this
 
 ## Project File Structure
 
-node-telegram-tut/
+discord-cryptocurrency-bot/
 ├── node_modules/
 ├── src/
 │   └── index.js
@@ -168,7 +167,7 @@ Hello my name is cryptocurrency-bot#0235!
 
 ## 4. Creating the bot commands <a name="creating-commands"></a>
 
-For this example i will create only three commands, `!help` command to get all the available commands, a `!currencies` command to get all the supported currencies and a `!crypto_price` to get the price of the selected cryptocurrency in the desired currency.
+For this example I will create only three commands, `!help` command to get all the available commands, a `!currencies` command to get all the supported currencies and a `!crypto_price` to get the price of the selected cryptocurrency in the desired currency.
 
 - So let's start creating our **!help** command.
 
@@ -275,7 +274,7 @@ client.on("messageCreate",  (msg) => {
 
 So let's get **currencies** and the **cryptoCurrencies** by splitting the string.
 
-We need to create a conditional in case the user enters the data incorrectly, or in case the user does not send any data in the command. if this is the case we need to send the user a message, in this case i want the user to remember how to use the command so i added an example.
+We need to create a conditional in case the user enters the data incorrectly, or in case the user does not send any data in the command. if this is the case we need to send the user a message, in this case I want the user to remember how to use the command so I added an example.
 
 Now we are going to make the GET request to the API, we also going to check if the object from the response is empty, if it's empty it's because there was a spelling error, or some of the data was misplaced. If this is the case we will answer again telling the user how to use the command.
 
@@ -288,7 +287,7 @@ data: {
   }
 ```
 
-So i chose to use a *for loop* inside another *for loop* to manipulate the data, then used an embed again to format the text
+So I chose to use a *for loop* inside another *for loop* to manipulate the data, then used an embed again to format the text
 
 ```js
 if (msg.content.startsWith("!crypto_price")) {
@@ -344,7 +343,7 @@ If you try **!crypto_price** command, you should get something like this
 
 - we need to create a server
 
-In case you want to deploy this app, we need to create a server, so let's install **express** with this command `npm i express` and create a server in our *index.js*
+In case you want to deploy this app, we need to create a server, so let's install **express** with this command `npm I express` and create a server in our *index.js*
 
 remember to create a **port** constant and assign this `process.env.PORT` to it (heroku will give us a port value)
 
@@ -378,7 +377,7 @@ Choose a name for your new app and continue to the next part
 
 -  install Heroku CLI
 
-We are not going to ad a pipeline, so we can skip that part. Now for the deployment method i will use [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+We are not going to ad a pipeline, so we can skip that part. Now for the deployment method I will use [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 ![Heroku cli](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/df9woakszfyxgs2dt0ek.png)
 
@@ -402,7 +401,7 @@ Now lets follow the steps below, **replace master by main** or won't let you `gi
 
 We learned how to make a cryptocurrency discord bot using **discord.js** and **node.js**.
 
-I really hope you have been able to follow the post without any trouble, otherwise i apologize, please leave me your doubts or comments.
+I really hope you have been able to follow the post without any trouble, otherwise I apologize, please leave me your doubts or comments.
 
 [You can contact me by telegram if you need to hire a Full Stack developer.](https://t.me/rtagliajs)
 
